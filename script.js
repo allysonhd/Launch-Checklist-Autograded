@@ -1,14 +1,8 @@
 // Write your JavaScript code here!
-const {
-  myFetch,
-  formSubmission,
-  pickPlanet,
-  addDestinationInfo,
-} = require("./scriptHelper");
 
 window.addEventListener("load", function () {
   let listedPlanets;
-  let listedPlanetsResponse = myFetch().value;
+  let listedPlanetsResponse = myFetch();
   listedPlanetsResponse
     .then(function (result) {
       listedPlanets = result;
@@ -24,7 +18,8 @@ window.addEventListener("load", function () {
         planetChoice.diameter,
         planetChoice.star,
         planetChoice.distance,
-        planetChoice.moons
+        planetChoice.moons,
+        planetChoice.image
       );
 
       return planetChoice;
